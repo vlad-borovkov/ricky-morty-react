@@ -1,1 +1,7 @@
-@import url(./blocks/App.css);
+@import url(./vendor/normalize.css);
+@import url(./vendor/fonts/fonts.css);
+
+@import url(./blocks/page/page.css);
+@import url(./blocks/header/header.css);
+@import url(./blocks/header/__group-logo/header__group-logo.css);
+@import url(./blocks/header/__menu/header__menu.css);
