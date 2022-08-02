@@ -5,3 +5,10 @@
 @import url(./blocks/header/header.css);
 @import url(./blocks/header/__group-logo/header__group-logo.css);
 @import url(./blocks/header/__menu/header__menu.css);
+
+@import url(./blocks/container-season/container-season.css);
+@import url(./blocks/container-season/__title/container-season__title.css);
+
+@import url(./blocks/season-grid/season-grid.css);
+
+@import url(./blocks/card/card.css);

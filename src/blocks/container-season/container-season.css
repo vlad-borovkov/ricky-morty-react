@@ -1,0 +1,10 @@
+.container-season {
+    display: flex;
+    width: 85vw;
+    min-height: 40vh;
+    background-color: whitesmoke;
+    border-radius: 10px;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}

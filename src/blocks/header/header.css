@@ -4,8 +4,9 @@
   justify-content: center;
   margin: 0 auto;
   padding-top: 45px;
-  max-width: 880px;
+  width: 100vw;
   border-bottom: 1px solid rgba(84, 84, 84, 0.7);
+  background-color: #0e1829;
   
 }
 

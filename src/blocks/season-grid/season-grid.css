@@ -1,0 +1,14 @@
+.season-grid {
+  margin: 4px;
+  padding: 0;
+  margin-bottom: 30px;
+  width: 80vw;
+  height: fit-content;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 280px);
+  grid-template-rows: repeat(auto-fit, 128px);
+  grid-column-gap: 17px;
+  grid-row-gap: 51px;
+  justify-content: center;
+  }
+  
