@@ -11,8 +11,8 @@
   "license": "ISC",
   "devDependencies": {
     "@babel/cli": "^7.18.9",
-    "@babel/core": "^7.18.9",
-    "@babel/preset-env": "^7.18.9",
+    "@babel/core": "^7.18.10",
+    "@babel/preset-env": "^7.18.10",
     "@babel/preset-react": "^7.18.6",
     "babel-loader": "^8.2.5",
     "clean-webpack-plugin": "^4.0.0",
@@ -28,6 +28,8 @@
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "react-hot-loader": "^4.3.11",
-    "react-router-dom": "^5.2.1"
+    "react-router-dom": "^5.2.1",
+    "react-scripts": "^5.0.1",
+    "rickmortyapi": "^1.0.0"
   }
 }

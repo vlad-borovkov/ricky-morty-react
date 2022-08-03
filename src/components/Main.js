@@ -1,33 +1,17 @@
 import React from "react";
 import Seasons from "./Seasons";
 
-const Main = () => {
+const Main = ({ seasonCardValue }) => {
+
+
   return (
     <>
       <div className="container-season">
         <>
-        <h2 className="container-season__title">Season 1</h2>
-        <Seasons/>
+          <h2 className="container-season__title">All seasons</h2>
+          <Seasons
+          seasonCardValue={seasonCardValue} />
         </>
-        
-      </div>
-      <div className="container-season">
-      <>
-        <h2 className="container-season__title">Season 2</h2>
-        <Seasons/>
-        </>
-      </div>
-      <div className="container-season">
-        <h2 className="container-season__title">Season 3</h2>
-      </div>
-      <div className="container-season">
-        <h2 className="container-season__title">Season 4</h2>
-      </div>
-      <div className="container-season">
-        <h2 className="container-season__title">Season 5</h2>
-      </div>
-      <div className="container-season">
-        <h2 className="container-season__title">Season 6</h2>
       </div>
     </>
   );

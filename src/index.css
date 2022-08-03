@@ -8,7 +8,13 @@
 
 @import url(./blocks/container-season/container-season.css);
 @import url(./blocks/container-season/__title/container-season__title.css);
-
-@import url(./blocks/season-grid/season-grid.css);
+@import url(./blocks/container-season/__button/container-season__button.css);
+@import url(./blocks/grid-season/grid-season.css);
+@import url(./blocks/grid-hero/grid-hero.css);
 
 @import url(./blocks/card/card.css);
+
+@import url(./blocks/card-hero/card-hero.css);
+@import url(./blocks/card-hero/__image/card-hero__image.css);
+
+

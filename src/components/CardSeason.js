@@ -2,43 +2,27 @@ import React from "react";
 
 import { Route, Switch, Redirect, useHistory, Link } from "react-router-dom";
 
-const CardSeason = () => {
+const CardSeason = ({ card, onCardClick }) => {
+
+
+  
+  function handleClick() {
+    onCardClick(card);
+  }
+
   return (
+    
     <>
       <li style={{ listStyleType: "none" }}>
-        <div className="card" onClick={"handleClick"}></div>
-      </li>
-      <li style={{ listStyleType: "none" }}>
-        <div className="card" onClick={"handleClick"}></div>
-      </li>
-      <li style={{ listStyleType: "none" }}>
-        <div className="card" onClick={"handleClick"}></div>
-      </li>
-      <li style={{ listStyleType: "none" }}>
-        <div className="card" onClick={"handleClick"}></div>
-      </li>
-      <li style={{ listStyleType: "none" }}>
-        <div className="card" onClick={"handleClick"}></div>
-      </li>
-      <li style={{ listStyleType: "none" }}>
-        <div className="card" onClick={"handleClick"}></div>
-      </li>
-      <li style={{ listStyleType: "none" }}>
-        <div className="card" onClick={"handleClick"}></div>
-      </li>
-      <li style={{ listStyleType: "none" }}>
-        <div className="card" onClick={"handleClick"}></div>
-      </li>
-      <li style={{ listStyleType: "none" }}>
-        <div className="card" onClick={"handleClick"}></div>
-      </li>
-      <li style={{ listStyleType: "none" }}>
-        <div className="card" onClick={"handleClick"}></div>
-      </li>
-      <li style={{ listStyleType: "none" }}>
-        <div className="card" onClick={"handleClick"}></div>
-      </li>
-      
+        <div className="card" onClick={handleClick}>
+          
+        <p>{card.name}</p>
+        <p>{card.episode}</p>
+        <p>{card.air_date}</p>
+        
+        </div>
+
+      </li>  
     </>
   );
 };

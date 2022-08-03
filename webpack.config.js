@@ -19,18 +19,32 @@ module.exports = {
         use: ["style-loader", "css-loader"]
       },
       {
-        test: /\.(png|svg|jpg|gif|woff(2)?|eot|ttf|otf)$/,
+        test: /\.(png|svg|jpg|jpeg|gif|woff(2)?|eot|ttf|otf)$/,
         type: 'asset/resource'
       },
     ]
   },
-  resolve: { extensions: ["*", ".js", ".jsx"] },
+  resolve: { 
+    extensions: ["*", ".js", ".jsx"],
+    fallback: {
+      "fs": false,
+      "tls": false,
+      "net": false,
+      "path": false,
+      "zlib": false,
+      "http": false,
+      "https": false,
+      "stream": false,
+      "crypto": false,
+    }  
+  },
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'main.js',
-        publicPath: ''
+    publicPath: '/'
   },
   devServer: {
+    historyApiFallback: true,
     static: path.resolve(__dirname, './dist'), 
     compress: true, 
     port: 3000,
