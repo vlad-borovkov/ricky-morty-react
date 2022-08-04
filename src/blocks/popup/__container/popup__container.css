@@ -1,0 +1,9 @@
+.popup__container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  min-width: 57%;
+  min-height: 55%;
+  background-color: #14354e;
+  align-items: center;
+  }

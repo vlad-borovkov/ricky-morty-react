@@ -1,0 +1,14 @@
+.grid-location {
+  margin: 4px;
+  margin-left: 14px;
+  padding: 0;
+  width: 20vw;
+  height: 29vh;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 282px);
+  grid-template-rows: repeat(auto-fit, 270px);
+  grid-column-gap: 17px;
+  grid-row-gap: 51px;
+  justify-content: center;
+  }
+  

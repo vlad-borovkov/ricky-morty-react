@@ -1,0 +1,10 @@
+.location-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 23vw;
+    height: 39vh;
+    background-color: whitesmoke;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}

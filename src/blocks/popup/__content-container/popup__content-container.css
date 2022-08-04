@@ -1,0 +1,7 @@
+.popup__content-container {
+    display: flex;
+    flex-direction: row;
+    width: 54vw;
+    margin-top: 27px;
+    justify-content: space-around;
+}

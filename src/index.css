@@ -9,6 +9,7 @@
 @import url(./blocks/container-season/container-season.css);
 @import url(./blocks/container-season/__title/container-season__title.css);
 @import url(./blocks/container-season/__button/container-season__button.css);
+
 @import url(./blocks/grid-season/grid-season.css);
 @import url(./blocks/grid-hero/grid-hero.css);
 
@@ -16,5 +17,21 @@
 
 @import url(./blocks/card-hero/card-hero.css);
 @import url(./blocks/card-hero/__image/card-hero__image.css);
+
+@import url(./blocks/popup/popup.css);
+@import url(./blocks/popup/_on/popup_on.css);
+@import url(./blocks/popup/__container/popup__container.css);
+@import url(./blocks/popup/__title-container/popup__title-container.css);
+@import url(./blocks/popup/__content-container/popup__content-container.css);
+@import url(./blocks/popup/__info-container/popup__info-container.css);
+@import url(./blocks/popup/__info-title/popup__info-title.css);
+@import url(./blocks/popup/__title-container/popup__title-container.css);
+@import url(./blocks/popup/__close-icone/popup__close-icone.css);
+@import url(./blocks/popup/__info-list/popup__info-list.css);
+@import url(./blocks/popup/__info-list-item/popup__info-list-item.css);
+@import url(./blocks/location-info/location-info.css);
+@import url(./blocks/location-info/__title/location-info__title.css);
+@import url(./blocks/location-info/__lists/location-info__lists.css);
+@import url(./blocks/grid-location/grid-location.css);
 
 

@@ -29,7 +29,6 @@
     "react-dom": "^16.5.2",
     "react-hot-loader": "^4.3.11",
     "react-router-dom": "^5.2.1",
-    "react-scripts": "^5.0.1",
-    "rickmortyapi": "^1.0.0"
+    "react-scripts": "^5.0.1"
   }
 }

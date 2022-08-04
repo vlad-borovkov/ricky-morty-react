@@ -8,6 +8,7 @@ import Header from "./Header.js";
 import Main from "./Main";
 import Episode from "./Episode";
 import Character from "./Character";
+import PopupHero from "./PopupHero";
 
 import { SeasonsContext } from "./../context/SeasonsContext";
 
@@ -22,20 +23,17 @@ const App = () => {
       .then((data) => setSeasons(data));
   }, []);
 
-  //текущая карточка 
-  const [selectedCard, setselectedCard] = React.useState({})
-  const [characters, setCharacters] = React.useState([])
-  
+  //текущая карточка
+  const [selectedCard, setselectedCard] = React.useState({});
+  const [characters, setCharacters] = React.useState([]);
+
   function handleCardClick(card) {
-    setselectedCard(card)
-    history.push('/episode')
-    setCharacters(card.characters)
-    
+    setselectedCard(card);
+    history.push("/episode");
+    setCharacters(card.characters);
   }
-  
 
-
-const history = useHistory()
+  const history = useHistory();
 
   return (
     <>
@@ -44,18 +42,19 @@ const history = useHistory()
         <SeasonsContext.Provider value={seasons}>
           <Switch>
             <Route exact path="/">
-              <Main
-              seasonCardValue={handleCardClick} />
+              <Main seasonCardValue={handleCardClick} />
             </Route>
 
             <Route path="/episode">
               <Episode
-              clickedCardValue={selectedCard}
-              characters={characters} />
+                clickedCardValue={selectedCard}
+                characters={characters}
+              />
             </Route>
 
             <Route path="/character">
-              <Character />
+              <PopupHero 
+              isOpen={true}/>
             </Route>
           </Switch>
         </SeasonsContext.Provider>

@@ -6,6 +6,7 @@ const CardHero = ({card, onCardClick}) => {
   
   const handleClickOnCard = () =>{
     onCardClick(card)
+    //закинуть value в глобальный контекст, чтобы не прокидывать через модули?
   }
   
   return (
