@@ -12,6 +12,7 @@ import PopupHero from "./PopupHero";
 
 import { SeasonsContext } from "./../context/SeasonsContext";
 
+
 //import { getCharacter } from 'rickmortyapi'
 
 const App = () => {
@@ -33,6 +34,8 @@ const App = () => {
     setCharacters(card.characters);
   }
 
+ 
+
   const history = useHistory();
 
   return (
@@ -40,6 +43,7 @@ const App = () => {
       <Header />
       <div className="page">
         <SeasonsContext.Provider value={seasons}>
+        
           <Switch>
             <Route exact path="/">
               <Main seasonCardValue={handleCardClick} />
@@ -51,11 +55,7 @@ const App = () => {
                 characters={characters}
               />
             </Route>
-
-            <Route path="/character">
-              <PopupHero 
-              isOpen={true}/>
-            </Route>
+            
           </Switch>
         </SeasonsContext.Provider>
       </div>

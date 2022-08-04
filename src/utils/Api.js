@@ -38,47 +38,15 @@ class Api {
   }
 
   getCharactersFromServer(number) {
-    const cardsFromServer = `/character/${number}`;
-    return this.makeRequest(cardsFromServer)
+    const charactersFromServer = `/character/${number}`;
+    return this.makeRequest(charactersFromServer)
   }
 
-  changeUserInfo(userValue) {
-    const requestUrl = "/users/me";
-    const userData = userValue;
-    
-    //передать объект на сервер
-    return this.makeRequest(requestUrl, "PATCH", userData);
+  getLocationsFromServer(number) {
+    const locationFromServer = `/location/${number}`;
+    return this.makeRequest(locationFromServer)
   }
 
-  changeAvatar(avatarUrl) {
-    const requestUrl = "/users/me/avatar";
-    return this.makeRequest(requestUrl, "PATCH", avatarUrl);
-  }
-
-  handlerAddCard(cardsData) {
-    const requestUrl = "/cards";
-    return this.makeRequest(requestUrl, "POST", cardsData);
-  }
-
-  changeLikeCardStatus(cardId, islikedState) {
-    const requestUrl = `/cards/${cardId}/likes`;
-    return this.makeRequest(requestUrl, `${islikedState ? "PUT" : "DELETE"}`)
-  }
-
-  deleteLikeOnCard(cardId) {
-    const requestUrl = `/cards/${cardId}/likes`;
-    return this.makeRequest(requestUrl, "DELETE");
-  }
-
-  addLikeOnCard(cardId) {
-    const requestUrl = `/cards/${cardId}/likes`;
-    return this.makeRequest(requestUrl, "PUT");
-  }
-
-  deleteCard(cardId) {
-    const requestUrl = `/cards/${cardId}`;
-    return this.makeRequest(requestUrl, "DELETE");
-  }
 }
 
 export const api = new Api({

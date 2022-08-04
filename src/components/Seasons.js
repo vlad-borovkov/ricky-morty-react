@@ -5,10 +5,10 @@ import CardSeason from "./CardSeason";
 import { SeasonsContext } from "../context/SeasonsContext";
 
 const Seasons = ({ seasonCardValue }) => {
+  
 //подписка на контекст с сезонами
-
     const currentSeasonsArray = React.useContext(SeasonsContext).results
-    console.log(currentSeasonsArray)
+    //console.log(currentSeasonsArray)
 
 
     return (
