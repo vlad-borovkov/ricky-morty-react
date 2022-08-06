@@ -23,7 +23,7 @@ class Api {
   }
 
   getAllEpisodesValue(pageNumber) {
-    const infoUsersDefault = `/${pageNumber}`;
+    const infoUsersDefault = `/episode?page=${pageNumber}`;
     return this.makeRequest(infoUsersDefault)
   }
 
@@ -50,5 +50,5 @@ class Api {
 }
 
 export const api = new Api({
-  domain: "https://rickandmortyapi.com/api/",
+  domain: "https://rickandmortyapi.com/api",
 });

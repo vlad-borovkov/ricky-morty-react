@@ -16,25 +16,16 @@ import { SeasonsContext } from "./../context/SeasonsContext";
 //import { getCharacter } from 'rickmortyapi'
 
 const App = () => {
-  //получаем глобальный контекст при рендеринге приложения
-  const [seasons, setSeasons] = React.useState({});
-  React.useEffect(() => {
-    api
-      .getEpisodesValue() //как реализовать получение всех серий через ключ nextpage?
-      .then((data) => setSeasons(data));
-  }, []);
+
 
   //текущая карточка
   const [selectedCard, setselectedCard] = React.useState({});
   const [characters, setCharacters] = React.useState([]);
-
   function handleCardClick(card) {
     setselectedCard(card);
     history.push("/episode");
     setCharacters(card.characters);
   }
-
- 
 
   const history = useHistory();
 
@@ -42,9 +33,9 @@ const App = () => {
     <>
       <Header />
       <div className="page">
-        <SeasonsContext.Provider value={seasons}>
-        
+      
           <Switch>
+
             <Route exact path="/">
               <Main seasonCardValue={handleCardClick} />
             </Route>
@@ -57,7 +48,7 @@ const App = () => {
             </Route>
             
           </Switch>
-        </SeasonsContext.Provider>
+      
       </div>
     </>
   );
