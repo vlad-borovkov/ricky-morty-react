@@ -1,6 +1,6 @@
 .card-hero__image {
-    width: 282px;
-    height: 282px;
+    width: 50%;
+    height: 88%;
     object-fit: cover;
     border-radius: 10px;
 

@@ -17,6 +17,10 @@
 
 @import url(./blocks/card-hero/card-hero.css);
 @import url(./blocks/card-hero/__image/card-hero__image.css);
+@import url(./blocks/card-hero/__item/card-hero__item.css);
+@import url(./blocks/card-hero/__title/card-hero__title);
+@import url(./blocks/card-hero/__wrapper/card-hero__wrapper.css);
+@import url(./blocks/card-hero/__wrapper/_items/card-hero__wrapper_items.css);
 
 @import url(./blocks/popup/popup.css);
 @import url(./blocks/popup/_on/popup_on.css);

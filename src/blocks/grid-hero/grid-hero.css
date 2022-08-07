@@ -6,9 +6,9 @@
   width: 80vw;
   display: grid;
   grid-template-columns: repeat(auto-fit, 280px);
-  grid-template-rows: repeat(auto-fit, 472px);
-  grid-column-gap: 17px;
-  grid-row-gap: 51px;
+  grid-template-rows: repeat(auto-fit, 188px);
+  grid-column-gap: 27px;
+  grid-row-gap: 24px;
   justify-content: center;
   }
   

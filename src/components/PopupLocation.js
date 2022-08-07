@@ -1,22 +1,21 @@
 import React from "react";
-
 import { Route, Switch, Redirect, useHistory, Link } from "react-router-dom";
-
 import { api } from "../utils/Api";
+import CardHero from "./CardHero";
 
 const PopupLocation = ({ isOpen, onClose, locationSelectedCard, heroForFetch }) => {
   //api запрос на получение даты локаций персонажа
   const [heroArray, setHeroArray] = React.useState([]);
 
   function getHeroFromServer () {
-    console.log(heroForFetch) //ожидаем массив
+    //приходит массив с эндпоинтом https://rickandmortyapi.com/api/character/(номер)
 
-    const charactersPromises = heroForFetch.map((item) =>
-    api.getCharactersFromServer(item.replace(/[^0-9]/g, ""))
-  );
-  Promise.all(charactersPromises).then((values) => {
-    setHeroArray(values);
-  });
+    const charactersArrayNumbers = heroForFetch.map((item) => item.replace(/[^0-9]/g, ""))
+    
+    api.getCharactersFromServer(charactersArrayNumbers)
+    .then((values) => {
+      setHeroArray(values);
+    });
   }
 
   React.useEffect(()=> {

@@ -1,0 +1,13 @@
+.card-hero__title {
+    margin: 0;
+    padding: 0;
+    align-self: center;
+    font-family: Inter, Arial, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 29px;
+    text-align: center;
+    color: #000000;
+    word-wrap: break-word;
+}

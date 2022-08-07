@@ -18,7 +18,6 @@ const Seasons = ({ seasonCardValue }) => {
   
 React.useEffect(()=> {
   if (fetching) {
-    console.log(fetching)
     api.getAllEpisodesValue(currentPage)
   .then(data => {
     setSeasons([...seasons, ...data.results])
