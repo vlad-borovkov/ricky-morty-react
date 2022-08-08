@@ -1,30 +1,20 @@
-import React from "react";
+import React from 'react';
+import { Route, Switch, Redirect, useHistory, Link } from 'react-router-dom';
 
-import { Route, Switch, Redirect, useHistory, Link } from "react-router-dom";
-
-const CardSeason = ({ card, onCardClick }) => {
-
-
-  
+function CardSeason({ card, onCardClick }) {
   function handleClick() {
     onCardClick(card);
   }
 
   return (
-    
-    <>
-      <li style={{ listStyleType: "none" }}>
-        <div className="card" onClick={handleClick}>
-          
+    <li style={{ listStyleType: 'none' }}>
+      <div className="card" onClick={handleClick}>
         <p>{card.name}</p>
         <p>{card.episode}</p>
         <p>{card.air_date}</p>
-        
-        </div>
-
-      </li>  
-    </>
+      </div>
+    </li>
   );
-};
+}
 
 export default CardSeason;

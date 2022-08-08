@@ -1,5 +1,6 @@
 .location-info__lists {
     display: flex;
-    width: 23vw;
-    overflow-y: scroll;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
 }

@@ -1,71 +1,74 @@
-import React from "react";
-import { Route, Switch, Redirect, useHistory, Link } from "react-router-dom";
-import { api } from "../utils/Api";
-import CardHero from "./CardHero";
-import PopupHero from "./PopupHero";
-import PopupLocation from "./PopupLocation";
+/* eslint-disable react/prop-types */
+/* eslint-disable linebreak-style */
+import React from 'react';
+import { Route, useHistory, Link } from 'react-router-dom';
+import { api } from '../utils/Api';
+import CardHero from './CardHero';
+import PopupHero from './PopupHero';
+import PopupLocation from './PopupLocation';
 
-const Episode = ({ clickedCardValue, characters }) => {
-  //массив персонажей
+function Episode({ clickedCardValue, characters }) {
+  // массив персонажей
   const [charactersArray, setCharactersArray] = React.useState([]);
 
   function setPeopleFromServer() {
-    //console.log(characters)
+    // console.log(characters)
     const charactersPromises = characters.map((item) =>
-      api.getCharactersFromServer(item.replace(/[^0-9]/g, ""))
+      api.getCharactersFromServer(item.replace(/[^0-9]/g, ''))
     );
     Promise.all(charactersPromises).then((values) => {
       setCharactersArray(values);
     });
   }
 
-  //api запрос с героями из эпизода
+  // api запрос с героями из эпизода
   React.useEffect(() => {
     setPeopleFromServer();
   }, [clickedCardValue]);
 
-  //открываем попап hero
-const [isHeroPopupOpen, setHeroPopupOpen] = React.useState(false)
+  // открываем попап hero
+  const [isHeroPopupOpen, setHeroPopupOpen] = React.useState(false);
   function openHeroPopup() {
-    setHeroPopupOpen(true)
+    setHeroPopupOpen(true);
   }
-  //закрываем попап hero, очищаем стейт текущей карточки
-function handleCloseHeroPopup() {
-  setHeroPopupOpen(false)
-  setHeroSelectedCard({})
-}
-//открываем попап location
-const [isLocationPopupOpen, setIsLocationPopupOpen] = React.useState(false)
-function handleOpenLocationPopup() {
-  setIsLocationPopupOpen(true)
-}
-function handleCloseLocationPopup() {
-  setIsLocationPopupOpen(false)
-}
+  // закрываем попап hero, очищаем стейт текущей карточки
+  function handleCloseHeroPopup() {
+    setHeroPopupOpen(false);
+    setHeroSelectedCard({});
+  }
+  // открываем-закрываем попап location
+  const [isLocationPopupOpen, setIsLocationPopupOpen] = React.useState(false);
+  function handleOpenLocationPopup() {
+    setIsLocationPopupOpen(true);
+  }
+  function handleCloseLocationPopup() {
+    setIsLocationPopupOpen(false);
+  }
 
-//передаём value hero выбраной карточки в попап
+  // передаём value hero выбраной карточки в попап
   const [heroSelectedCard, setHeroSelectedCard] = React.useState({});
   const [locationsForFetch, setLocationsForFetch] = React.useState([]);
 
   function handleHeroCardClick(card) {
-    openHeroPopup();
+    handleCloseLocationPopup();
     setHeroSelectedCard(card);
-    setLocationsForFetch([card.location.url])
+    openHeroPopup();
+    setLocationsForFetch([card.location.url]);
   }
 
   const history = useHistory();
 
-const [locationSelectedCard, setLocationSelectedCard] = React.useState({})
-const [heroForFetch, setHeroForFetch] = React.useState([])
+  const [locationSelectedCard, setLocationSelectedCard] = React.useState({});
+  const [heroForFetch, setHeroForFetch] = React.useState([]);
   function handleLocationCardClick(card) {
-    console.log(card)
-    setLocationSelectedCard(card)
-    setHeroForFetch(card.residents)//сортируем и получаем массив
-    setHeroPopupOpen(false)
-    setHeroSelectedCard({})
-    handleOpenLocationPopup()
-}
-  
+    console.log(card);
+    setLocationSelectedCard(card);
+    setHeroForFetch(card.residents); // сортируем и получаем массив
+    setHeroPopupOpen(false);
+    setHeroSelectedCard({});
+    handleOpenLocationPopup();
+  }
+
   return (
     <>
       <div className="container-season">
@@ -92,21 +95,23 @@ const [heroForFetch, setHeroForFetch] = React.useState([])
         </ul>
       </div>
 
-      <PopupHero 
-      isOpen={isHeroPopupOpen} 
-      clickedHeroCardValue={heroSelectedCard}
-      locationsForFetch={locationsForFetch}
-      onClose={handleCloseHeroPopup}
-      handleLocationCardClick={handleLocationCardClick} />
-    
+      <PopupHero
+        isOpen={isHeroPopupOpen}
+        clickedHeroCardValue={heroSelectedCard}
+        locationsForFetch={locationsForFetch}
+        onClose={handleCloseHeroPopup}
+        handleLocationCardClick={handleLocationCardClick}
+      />
+
       <PopupLocation
-      isOpen={isLocationPopupOpen}
-      locationSelectedCard={locationSelectedCard}
-      heroForFetch={heroForFetch}
-      onClose={handleCloseLocationPopup}
+        isOpen={isLocationPopupOpen}
+        locationSelectedCard={locationSelectedCard}
+        heroForFetch={heroForFetch}
+        onClose={handleCloseLocationPopup}
+        clickedHeroCardValue={handleHeroCardClick}
       />
     </>
   );
-};
+}
 
 export default Episode;

@@ -1,16 +1,15 @@
-import React from "react";
+import React from 'react';
 
-import { Route, Switch, Redirect, useHistory, Link } from "react-router-dom";
+import { Route, Switch, Redirect, useHistory, Link } from 'react-router-dom';
 
 const CardHero = ({ card, onCardClick }) => {
   const handleClickOnCard = () => {
     onCardClick(card);
-    //закинуть value в глобальный контекст, чтобы не прокидывать через модули?
   };
 
   return (
     <>
-      <li style={{ listStyleType: "none" }}>
+      <li style={{ listStyleType: 'none' }}>
         <div className="card-hero" onClick={handleClickOnCard}>
           <h3 className="card-hero__title">{card.name}</h3>
           <div className="card-hero__wrapper">

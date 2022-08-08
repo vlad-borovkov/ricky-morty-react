@@ -1,26 +1,33 @@
-import React from "react";
-import { Route, Switch, Redirect, useHistory, Link } from "react-router-dom";
-import { api } from "../utils/Api";
-import CardHero from "./CardHero";
+import React from 'react';
+import { Route, Switch, Redirect, useHistory, Link } from 'react-router-dom';
+import { api } from '../utils/Api';
+import CardHero from './CardHero';
 
-const PopupLocation = ({ isOpen, onClose, locationSelectedCard, heroForFetch }) => {
+const PopupLocation = ({
+  isOpen,
+  onClose,
+  locationSelectedCard,
+  heroForFetch,
+  clickedHeroCardValue,
+}) => {
   //api запрос на получение даты локаций персонажа
   const [heroArray, setHeroArray] = React.useState([]);
 
-  function getHeroFromServer () {
+  function getHeroFromServer() {
     //приходит массив с эндпоинтом https://rickandmortyapi.com/api/character/(номер)
 
-    const charactersArrayNumbers = heroForFetch.map((item) => item.replace(/[^0-9]/g, ""))
-    
-    api.getCharactersFromServer(charactersArrayNumbers)
-    .then((values) => {
+    const charactersArrayNumbers = heroForFetch.map((item) =>
+      item.replace(/[^0-9]/g, '')
+    );
+
+    api.getCharactersFromServer(charactersArrayNumbers).then((values) => {
       setHeroArray(values);
     });
   }
 
-  React.useEffect(()=> {
-    getHeroFromServer() //блокирует CORS :(
-  }, [isOpen])
+  React.useEffect(() => {
+    getHeroFromServer(); //блокирует CORS :(
+  }, [isOpen]);
 
   // //очищаем массив мест при закрытии
   // React.useEffect(() => {
@@ -28,16 +35,14 @@ const PopupLocation = ({ isOpen, onClose, locationSelectedCard, heroForFetch }) 
   // }, [onClose]);
 
   return (
-    <div className={`popup ${isOpen ? "popup_on" : ""}`}>
+    <div className={`popup ${isOpen ? 'popup_on' : ''}`}>
       <div className="popup__container">
         <button
           className="popup__close-icone"
           type="button"
           onClick={onClose}
         ></button>
-        <h2 className="popup__title-container">
-          {locationSelectedCard.name}
-        </h2>
+        <h2 className="popup__title-container">{locationSelectedCard.name}</h2>
 
         <div className="popup__content-container">
           <ul className="grid-hero">
@@ -46,7 +51,7 @@ const PopupLocation = ({ isOpen, onClose, locationSelectedCard, heroForFetch }) 
                 <CardHero
                   key={cardItem.id}
                   card={cardItem}
-                  onCardClick={"handleHeroCardClick"}
+                  onCardClick={clickedHeroCardValue}
                 />
               ))
             ) : (

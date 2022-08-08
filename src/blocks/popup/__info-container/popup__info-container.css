@@ -2,7 +2,8 @@
     display: flex;
     background-color: whitesmoke;
     border-radius: 10px;
-    width: 32%;
+    width: 76vw;
+    height: 58vh;
     flex-direction: column;
     margin-right: 10px;
     margin-bottom: 10px;
