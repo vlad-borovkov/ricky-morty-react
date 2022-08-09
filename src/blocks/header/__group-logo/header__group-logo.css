@@ -4,6 +4,10 @@
   width: 200px;
 }
 
+.header__group-logo:hover {
+  cursor: pointer;
+}
+
 /* @media screen and (max-width: 920px) and (min-width: 581px)   {
   .header__group-logo {
     padding-left: 30px;

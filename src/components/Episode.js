@@ -1,5 +1,3 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable linebreak-style */
 import React from 'react';
 import { Route, useHistory, Link } from 'react-router-dom';
 import { api } from '../utils/Api';
@@ -12,12 +10,14 @@ function Episode({ clickedCardValue, characters }) {
   const [charactersArray, setCharactersArray] = React.useState([]);
 
   function setPeopleFromServer() {
-    // console.log(characters)
-    const charactersPromises = characters.map((item) =>
-      api.getCharactersFromServer(item.replace(/[^0-9]/g, ''))
+    const arrHeroForFetch = characters;
+
+    let sortedPeopleForFetch = arrHeroForFetch.map((item) =>
+      item.replace(/[^0-9]/g, '')
     );
-    Promise.all(charactersPromises).then((values) => {
-      setCharactersArray(values);
+
+    api.getCharactersFromServer(sortedPeopleForFetch).then((data) => {
+      setCharactersArray(data);
     });
   }
 
