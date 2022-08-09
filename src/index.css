@@ -15,6 +15,7 @@
 
 @import url(./blocks/card/card.css);
 
+
 @import url(./blocks/card-hero/card-hero.css);
 @import url(./blocks/card-hero/__image/card-hero__image.css);
 @import url(./blocks/card-hero/__item/card-hero__item.css);
@@ -35,6 +36,7 @@
 @import url(./blocks/popup/__info-list/popup__info-list.css);
 @import url(./blocks/popup/__info-list-item/popup__info-list-item.css);
 @import url(./blocks/popup/__image/popup__image.css);
+@import url(./blocks/popup/__grid-wrapper/popup__grid-wrapper.css);
 @import url(./blocks/location-info/location-info.css);
 @import url(./blocks/location-info/__title/location-info__title.css);
 @import url(./blocks/location-info/__lists/location-info__lists.css);

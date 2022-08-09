@@ -1,0 +1,5 @@
+.popup__grid-wrapper {
+    display: flex;
+    width: 54vw;
+    overflow-y: scroll;
+}

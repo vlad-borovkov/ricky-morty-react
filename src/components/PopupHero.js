@@ -3,6 +3,7 @@ import React from 'react';
 import { Route, Switch, Redirect, useHistory, Link } from 'react-router-dom';
 import CardLocation from './CardLocation';
 import { api } from '../utils/Api';
+import CardSeason from './CardSeason';
 
 const PopupHero = ({
   isOpen,
@@ -24,14 +25,32 @@ const PopupHero = ({
       });
   }
 
+  const [heroInEpisodes, setHeroInEpisodes] = React.useState([]);
+
+  function getAllEpisodesForHero() {
+    const arrEpisodeForFetch = clickedHeroCardValue.episode;
+
+    if (arrEpisodeForFetch != undefined) {
+      let sortedEpisodesForFetch = arrEpisodeForFetch.map((item) =>
+        item.replace(/[^0-9]/g, '')
+      );
+
+      api
+        .getEpisodesValue(sortedEpisodesForFetch)
+        .then((data) => setHeroInEpisodes(data));
+    }
+  }
+
   React.useEffect(() => {
     getLocationsFromServer();
+    getAllEpisodesForHero();
   }, [isOpen]);
 
-  // //очищаем массив мест при закрытии
-  // React.useEffect(() => {
-  //   setLocationsArray({});
-  // }, [onClose]);
+  //очищаем массив мест при закрытии
+  React.useEffect(() => {
+    setLocationsArray({});
+    setHeroInEpisodes([]);
+  }, [onClose]);
 
   return (
     <div className={`popup ${isOpen ? 'popup_on' : ''}`}>
@@ -86,6 +105,25 @@ const PopupHero = ({
                   )}
                 </ul>
               </div>
+            </div>
+            <div className="popup__grid-wrapper">
+              <ul className="grid-season">
+                {!Array.isArray(heroInEpisodes)
+                  ? [heroInEpisodes].map((cardItem) => (
+                      <CardSeason
+                        key={cardItem.id}
+                        card={cardItem}
+                        onCardClick={'seasonCardValue'}
+                      />
+                    ))
+                  : heroInEpisodes.map((cardItem) => (
+                      <CardSeason
+                        key={cardItem.id}
+                        card={cardItem}
+                        onCardClick={'seasonCardValue'}
+                      />
+                    ))}
+              </ul>
             </div>
           </div>
         </div>
