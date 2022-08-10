@@ -8,9 +8,11 @@
     position: relative;
     background-color: #6394e3;
     box-shadow: 0px 1px 3px black;
-    
+    transition: transform 0.2s ease-in-out;
+
 }
 
 .card:hover {
-    box-shadow: 0px 1px 10px black;
+
+    transform: scale(1.02);
 }
